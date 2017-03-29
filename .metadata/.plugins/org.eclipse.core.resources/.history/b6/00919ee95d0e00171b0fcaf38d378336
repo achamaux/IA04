@@ -1,0 +1,80 @@
+package Arbre;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import jade.core.AID;
+import jade.core.Agent;
+import jade.core.behaviours.CyclicBehaviour;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.wrapper.AgentController;
+import jade.wrapper.ContainerController;
+import jade.wrapper.StaleProxyException;
+import java.util.Scanner;
+
+public class AgentNode extends Agent {
+	
+	Agent fils_gauche;
+	Agent fils_droit;
+
+	private static final long serialVersionUID = 6179193345084926833L;
+
+	protected void setup() 
+	{ 
+		System.out.println(getLocalName()+ "--> Installed");  
+		DFAgentDescription dfd = new DFAgentDescription();
+		dfd.setName(getAID());
+		ServiceDescription sd = new ServiceDescription();
+		sd.setType("Node");
+		dfd.addServices(sd);
+		try {
+			DFService.register(this, dfd);
+		}
+		catch (FIPAException e) {
+			e.printStackTrace();
+		}
+		//Creation of son
+		ContainerController cc = getContainerController();
+		try {
+			AgentController ac = cc.createNewAgent(,"Arbre.AgentNode", null);
+			ac.start();
+		} 
+		catch (StaleProxyException e) {
+			e.printStackTrace();
+		}
+		addBehaviour(new attente()); 
+	}
+	
+	public class attente extends CyclicBehaviour {
+
+		private static final long serialVersionUID = 3216635722535044680L;
+
+		@SuppressWarnings("null")
+		@Override
+		public void action() {
+			MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.REQUEST);
+			ACLMessage message = receive(mt);
+			ACLMessage message_insert = null;
+			if (message != null) { 
+				try {
+					String s = message.getContent();
+					Scanner sc = new Scanner(s);
+					int n = sc.nextInt();
+					if (sc.next().equalsIgnoreCase("insert")) {
+						//insertion
+						message_insert.setContent(message.getContent());
+						message_insert.addReceiver(new AID("Root",AID.ISLOCALNAME));
+						send(message_insert);						
+					}
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+}
+

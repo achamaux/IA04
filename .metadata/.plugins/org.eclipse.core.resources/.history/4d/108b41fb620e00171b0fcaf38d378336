@@ -1,0 +1,104 @@
+package Arbre;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import jade.core.AID;
+import jade.core.Agent;
+import jade.core.behaviours.CyclicBehaviour;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+import jade.wrapper.AgentController;
+import jade.wrapper.ContainerController;
+import jade.wrapper.StaleProxyException;
+import java.util.Scanner;
+
+public class AgentNode extends Agent {
+	
+	AgentNode fils_gauche;
+	AgentNode fils_droit;
+
+	private static final long serialVersionUID = 6179193345084926833L;
+
+	protected void setup() 
+	{ 
+		System.out.println(getLocalName()+ "--> Installed");  
+		DFAgentDescription dfd = new DFAgentDescription();
+		dfd.setName(getAID());
+		ServiceDescription sd = new ServiceDescription();
+		sd.setType("Node");
+		dfd.addServices(sd);
+		try {
+			DFService.register(this, dfd);
+		}
+		catch (FIPAException e) {
+			e.printStackTrace();
+		}
+		addBehaviour(new attente()); 
+	}
+	
+	public class attente extends CyclicBehaviour {
+
+		private static final long serialVersionUID = 3216635722535044680L;
+
+		@SuppressWarnings("null")
+		@Override
+		public void action() {
+			MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.REQUEST);
+			ACLMessage message = receive(mt);
+			ACLMessage message_insert = null;
+			if (message != null) { 
+				try {
+					String s = message.getContent();
+					Scanner sc = new Scanner(s);
+					int n = sc.nextInt();
+					if (sc.next().equalsIgnoreCase("insert")) {
+						//insertion
+						Object[] args_init = getArguments();
+						Object[] args_droit = fils_droit.getArguments(); 
+						Object[] args_gauche = fils_gauche.getArguments(); 
+						if (args_init[0] == null) {
+							getAgent().setArguments(new Object[]{n});
+						}
+						else {
+							if ((args_gauche[0] == null) && (n < (int) args_init[0])) {
+								//Creation du fils gauche
+								ContainerController cc = getContainerController();
+								AgentController ac = cc.createNewAgent(getLocalName()+n,"Arbre.AgentNode", new Object[]{n});
+								ac.start(); fils_gauche = (AgentNode) ac;
+							}
+							if ((args_droit[0] == null) && (n > (int) args_init[0])) {
+								//Creation du fils droit
+								ContainerController cc = getContainerController();
+								AgentController ac = cc.createNewAgent(getLocalName()+n,"Arbre.AgentNode", new Object[]{n});
+								ac.start(); fils_droit = (AgentNode) ac;
+							}
+							if (((int) args_init[0] == n) || ((int) args_init[0] == n) || ((int) args_init[0] == n)) {
+								//Deja existant
+								System.out.println(n + "  déjà inséré");
+							}
+							if (!(args_gauche[0] == null) && (n < (int) args_init[0])) {
+								//Redirection vers fils gauche
+								message_insert.setContent(message.getContent());
+								message_insert.addReceiver(fils_gauche.getAID());
+								send(message_insert);
+							}
+							if (!(args_droit[0] == null) && (n > (int) args_init[0])) {
+								//Redirection vers fils droit
+								message_insert.setContent(message.getContent());
+								message_insert.addReceiver(fils_droit.getAID());
+								send(message_insert);
+							}
+						}
+					}
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+}
+

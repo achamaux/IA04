@@ -1,0 +1,76 @@
+package Sudoku;
+
+import jade.core.AID;
+import jade.core.Agent;
+import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.SequentialBehaviour;
+import jade.core.behaviours.TickerBehaviour;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.lang.acl.ACLMessage;
+
+public class AgentSim extends Agent {
+	
+	private static final long serialVersionUID = 997075021822159306L;
+	public AID[] AgentsAnalyse=new AID[27];
+	public long period = 1000;
+
+	protected void setup() 
+	{ 
+		System.out.println(getLocalName()+ "--> Installed");  
+		DFAgentDescription dfd = new DFAgentDescription();
+		dfd.setName(getAID());
+		ServiceDescription sd = new ServiceDescription();
+		sd.setType("Simulation");
+		sd.setName("Simulation");
+		dfd.addServices(sd);
+		try {
+			DFService.register(this, dfd);
+		}
+		catch (FIPAException e) {
+			e.printStackTrace();
+		}
+		SequentialBehaviour Resolution = new SequentialBehaviour();
+		
+		//Attente de souscription
+		Resolution.addSubBehaviour(new Behaviour(){
+
+			private static final long serialVersionUID = -8978420565209344880L;
+			protected int i = 0;
+			@Override
+			public void action() {
+				ACLMessage message = myAgent.receive();
+				if (message != null) {
+					ACLMessage reponse = message.createReply();
+					reponse.setPerformative(ACLMessage.INFORM);
+					reponse.setContent("Tu as le numéro : " + String.valueOf(i));
+					((AgentSim)myAgent).AgentsAnalyse[i]=message.getSender();
+					System.out.println("L \' agent " + message.getSender() + "reçoit le numéro " + i);
+					i++;
+					myAgent.send(reponse);
+				}
+			}
+			
+			public boolean done() {
+				return i >= 27;
+			}
+		});
+		
+		//Ticker Behaviour : Envoi de message
+		Resolution.addSubBehaviour(new TickerBehaviour(this, period){
+		
+			private static final long serialVersionUID = -2665058805363369990L;
+
+			protected void onTick() {
+		        
+				ACLMessage req = new ACLMessage(ACLMessage.REQUEST);
+				req.setContent("update");
+				for (AID a : ((AgentSim)myAgent).AgentsAnalyse)
+					req.addReceiver(a);
+				myAgent.send(req);
+		      } 
+		    });
+	}
+}	

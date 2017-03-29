@@ -1,0 +1,59 @@
+package Sudoku;
+
+import jade.core.AID;
+import jade.core.Agent;
+import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.SequentialBehaviour;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.lang.acl.ACLMessage;
+
+public class AgentSim extends Agent {
+	
+	private static final long serialVersionUID = 997075021822159306L;
+	public AID[] AgentsAnalyse=new AID[27];
+
+	protected void setup() 
+	{ 
+		System.out.println(getLocalName()+ "--> Installed");  
+		DFAgentDescription dfd = new DFAgentDescription();
+		dfd.setName(getAID());
+		ServiceDescription sd = new ServiceDescription();
+		sd.setType("Simulation");
+		sd.setName("Simulation");
+		dfd.addServices(sd);
+		try {
+			DFService.register(this, dfd);
+		}
+		catch (FIPAException e) {
+			e.printStackTrace();
+		}
+		SequentialBehaviour Resolution = new SequentialBehaviour();
+		
+		//Attente de souscription
+		Resolution.addSubBehaviour(new Behaviour(){
+
+			private static final long serialVersionUID = -8978420565209344880L;
+			protected int compteur = 0;
+			@Override
+			public void action() {
+				ACLMessage message = myAgent.receive();
+				if (message != null) {
+					ACLMessage reponse = message.createReply();
+					reponse.setPerformative(ACLMessage.INFORM);
+					reponse.setContent(String.valueOf(compteur));
+					((AgentSim)myAgent).AgentsAnalyse[compteur]=message.getSender();
+					System.out.println("L \' agent " + message.getSender() + "reçoit le numéro " + compteur);
+					compteur++;
+					myAgent.send(reponse);
+				}
+			}
+			
+			public boolean done() {
+				return compteur >= 27;
+			}
+		});
+	}
+}

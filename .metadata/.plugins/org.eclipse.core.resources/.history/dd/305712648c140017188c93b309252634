@@ -1,0 +1,66 @@
+package Sudoku;
+
+import jade.core.AID;
+import jade.core.Agent;
+import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.CyclicBehaviour;
+import jade.core.behaviours.SequentialBehaviour;
+import jade.core.behaviours.TickerBehaviour;
+import jade.domain.DFService;
+import jade.domain.FIPAException;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.lang.acl.ACLMessage;
+import java.util.HashMap;
+
+import Sudoku.AgentEnv.EnvoiReceptionBehaviour;
+
+public class AgentEnv extends Agent {
+	
+	
+
+	private static final long serialVersionUID = 4491698575470555772L;
+
+	protected void setup()
+	{
+		System.out.println(getLocalName()+ "--> Installed");  
+		DFAgentDescription dfd = new DFAgentDescription();
+		dfd.setName(getAID());
+		ServiceDescription sd = new ServiceDescription();
+		sd.setType("Environnement");
+		sd.setName("Environnement");
+		dfd.addServices(sd);
+		try {
+			DFService.register(this, dfd);
+		}
+		catch (FIPAException e) {
+			e.printStackTrace();
+		}
+		addBehaviour(new ReceptionBehaviour());
+		
+	}
+	
+	public class ReceptionBehaviour extends CyclicBehaviour {
+
+		private static final long serialVersionUID = -2918570422442842803L;
+
+		@Override
+		public void action() {
+			// TODO Auto-generated method stub
+			ACLMessage message = myAgent.receive();
+			
+			//Gestion des différents types de message
+			if (message != null){
+				if (message.getPerformative() == ACLMessage.REQUEST){
+					//Message provenant de Simul pour les résultats d'Analyse : on met à jour le sudoku
+					myAgent.addBehaviour(new ReplyToBehaviour(myAgent, message));
+				}
+			}
+			else
+				block();
+		}
+		}
+
+	}
+
+}

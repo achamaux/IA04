@@ -1,0 +1,17 @@
+package Sudoku;
+
+import jade.core.Agent;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+
+public class AgentAnalyse extends Agent{
+
+	private static final long serialVersionUID = 206720546310469258L;
+
+	protected void setup() 
+	{ 
+		System.out.println(getLocalName()+ "--> Installed"); 
+		ACLMessage message = new ACLMessage(ACLMessage.INFORM);
+		
+	}
+}

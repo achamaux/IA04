@@ -1,0 +1,38 @@
+package Sudoku;
+
+import java.io.IOException;
+
+import jade.core.behaviours.CyclicBehaviour;
+import jade.core.behaviours.OneShotBehaviour;
+import java.util.*;
+import jade.core.Agent;
+import jade.domain.DFService;
+import jade.domain.FIPAAgentManagement.DFAgentDescription;
+import jade.domain.FIPAAgentManagement.ServiceDescription;
+import jade.lang.acl.ACLMessage;
+import jade.lang.acl.MessageTemplate;
+
+public class AgentAnalyse extends Agent{
+
+	private static final long serialVersionUID = 206720546310469258L;
+
+	protected void setup() 
+	{ 
+		System.out.println(getLocalName()+ "--> Installed"); 
+		ACLMessage message = new ACLMessage(ACLMessage.INFORM);
+		try {
+			message.setContentObject(getAID());
+			DFAgentDescription template = new DFAgentDescription();
+			ServiceDescription sdd = new ServiceDescription();
+			sdd.setType("Simulation");
+			sdd.setName("Simulation");
+			template.addServices(sdd);
+			DFAgentDescription[] result =
+					DFService.search(myAgent, template);
+			message.addReceiver(r);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

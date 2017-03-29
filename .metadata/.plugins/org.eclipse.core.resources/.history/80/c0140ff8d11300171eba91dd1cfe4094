@@ -1,0 +1,12 @@
+package Sudoku;
+
+import jade.core.Agent;
+
+public class AgentAnalyse extends Agent{
+
+	private static final long serialVersionUID = 206720546310469258L;
+
+	protected void setup() 
+	{ 
+		System.out.println(getLocalName()+ "--> Installed"); 
+}

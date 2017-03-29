@@ -1,0 +1,10 @@
+package Sudoku;
+
+import jade.core.Agent;
+
+public class AgentAnalyse extends Agent{
+
+	protected void setup() 
+	{ 
+		System.out.println(getLocalName()+ "--> Installed"); 
+}

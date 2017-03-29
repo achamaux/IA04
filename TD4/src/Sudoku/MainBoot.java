@@ -1,0 +1,32 @@
+package Sudoku;
+
+import jade.core.Profile;
+import jade.core.ProfileImpl;
+import jade.core.Runtime;
+import jade.wrapper.AgentContainer;
+import jade.wrapper.AgentController;
+
+public class MainBoot {
+
+	public static void main(String[] args) {
+		String MAIN_PROPERTIES_FILE = "MainProperties";
+		Runtime rt = Runtime.instance();
+		Profile p = null;
+		try{
+			p = new ProfileImpl(MAIN_PROPERTIES_FILE);
+			AgentContainer mc = rt.createMainContainer(p);
+			AgentController ac = mc.createNewAgent("Sim","Sudoku.AgentSim", null);
+			AgentController ac2 = mc.createNewAgent("Env","Sudoku.AgentEnv", null);
+			ac.start(); ac2.start();
+			
+			for (int i=0; i<27; ++i){
+				ac=mc.createNewAgent("AgentAnalyse"+i, "Sudoku.AgentAnalyse", null);
+				ac.start();
+			}
+			
+		}
+		catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+}
