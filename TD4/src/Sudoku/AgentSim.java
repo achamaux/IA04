@@ -3,6 +3,7 @@ package Sudoku;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
+import jade.core.behaviours.OneShotBehaviour;
 import jade.core.behaviours.SequentialBehaviour;
 import jade.core.behaviours.TickerBehaviour;
 import jade.domain.DFService;
@@ -38,7 +39,7 @@ public class AgentSim extends Agent {
 			e.printStackTrace();
 		}
 		SequentialBehaviour ResolutionBehaviour = new SequentialBehaviour();
-		
+	
 		//Attente de souscription
 		ResolutionBehaviour.addSubBehaviour(new Behaviour(){
 
@@ -48,13 +49,12 @@ public class AgentSim extends Agent {
 			public void action() {
 				ACLMessage message = myAgent.receive(); //reception des souscriptions
 				if (message != null) {
-					ACLMessage reponse = message.createReply();
-					reponse.setPerformative(ACLMessage.INFORM);
-					reponse.setContent("Tu as le numéro : " + String.valueOf(i)); 
+					ACLMessage reponse = new ACLMessage(ACLMessage.INFORM_REF);
+					message.addReplyTo(message.getSender());
+					message.addReceiver(new AID("AgentEnv", AID.ISLOCALNAME));
 					map.put(i, message.getSender());
-					System.out.println("L \' agent " + message.getSender() + "reçoit le numéro " + i);
 					i++;
-					myAgent.send(reponse);
+					send(reponse);
 				}
 			}
 			
@@ -68,21 +68,39 @@ public class AgentSim extends Agent {
 		ResolutionBehaviour.addSubBehaviour(new TickerBehaviour(this, period){
 		
 			private static final long serialVersionUID = -2665058805363369990L;
-
+			
 			protected void onTick() {
-		        
-				ACLMessage message = new ACLMessage(ACLMessage.REQUEST);
-				message.addReceiver(new AID("AgentEnv", AID.ISLOCALNAME));
-				map.forEach((key,value)->{
-					try {
-						message.setContentObject(value);
-						send(message);
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-				});
+				ACLMessage message = receive();
+				if (message != null){
+					if (message.getPerformative() == ACLMessage.CONFIRM)
+						stop();
+				} else {
+					ACLMessage requete = new ACLMessage(ACLMessage.REQUEST);
+					requete.addReceiver(new AID("AgentEnv", AID.ISLOCALNAME));
+					map.forEach((key,value)->{
+						try {
+							requete.setContentObject(value);
+							send(requete);
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					});
 				
-		      } 
+				}
+			}
 		    });
+		
+		//Ticker Behaviour : Envoi de message aux agents analyses toutes les period ms
+		ResolutionBehaviour.addSubBehaviour(new OneShotBehaviour(){
+				
+			private static final long serialVersionUID = -2665058805363369990L;
+
+			@Override
+			public void action() {
+				// TODO Auto-generated method stub
+						
+					}
+			
+	    });
 	}
 }	

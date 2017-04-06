@@ -1,486 +1,68 @@
-!SESSION 2017-03-08 18:20:02.043 -----------------------------------------------
-eclipse.buildId=4.6.2.M20161124-1400
+!SESSION 2017-04-03 21:34:12.045 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_121
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
 Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-08 18:21:57.281
+!ENTRY org.eclipse.egit.ui 2 0 2017-04-03 21:34:39.127
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-08 18:36:03.464 -----------------------------------------------
-eclipse.buildId=4.6.2.M20161124-1400
+!SESSION 2017-04-03 21:41:19.112 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_121
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
-Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -data file:/C:/Users/Alexandre/Documents/Cours/IA04/workspace/ -product org.eclipse.epp.package.java.product
+Framework arguments:  -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product -product org.eclipse.epp.package.java.product -data C:\Users\Alexandre\Documents\Cours\IA04\workspace -product org.eclipse.epp.package.java.product
 
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-08 18:36:19.058
+!ENTRY org.eclipse.egit.ui 2 0 2017-04-03 21:41:27.375
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-13 19:06:15.410 -----------------------------------------------
-eclipse.buildId=4.6.2.M20161124-1400
+!SESSION 2017-04-04 16:33:03.169 -----------------------------------------------
+eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_121
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
 Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-13 19:06:52.533
+!ENTRY org.eclipse.egit.ui 2 0 2017-04-04 16:33:50.630
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
-!ENTRY org.eclipse.epp.mpc.core 4 0 2017-03-13 19:09:02.778
-!MESSAGE Failed to stream using org.eclipse.epp.internal.mpc.core.transport.httpclient.HttpClientTransport@24a904cc - falling back to org.eclipse.epp.internal.mpc.core.util.TransportFactory$1@1c986e9d: Cannot resolve host
-
-This is most often caused by a problem with your internet connection. Please check your internet connection and retry.
+!ENTRY org.eclipse.jdt.ui 4 10001 2017-04-04 17:13:15.753
+!MESSAGE Internal Error
 !STACK 1
-org.eclipse.core.runtime.CoreException: Cannot resolve host
-
-This is most often caused by a problem with your internet connection. Please check your internet connection and retry.
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.HttpClientTransport.stream(HttpClientTransport.java:226)
-	at org.eclipse.epp.internal.mpc.core.util.FallbackTransportFactory$FallbackTransport.stream(FallbackTransportFactory.java:68)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:163)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:128)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:115)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.processSearchRequest(DefaultMarketplaceService.java:426)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:452)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:1)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService$2.doSearch(CachingMarketplaceService.java:281)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.performSearch(CachingMarketplaceService.java:296)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.tagged(CachingMarketplaceService.java:278)
-	at org.eclipse.epp.internal.mpc.ui.AskMarketPlaceForFileSupportStrategy$1.run(AskMarketPlaceForFileSupportStrategy.java:75)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.net.UnknownHostException: marketplace.eclipse.org
-	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
-	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
-	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
-	at java.net.InetAddress.getAllByName0(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
-	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:102)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.ExecutorClientWrapper.execute(ExecutorClientWrapper.java:61)
-	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.HttpClientTransport.execute(HttpClientTransport.java:198)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.RequestTemplate.executeImpl(RequestTemplate.java:91)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.RequestTemplate.execute(RequestTemplate.java:50)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.HttpClientTransport.stream(HttpClientTransport.java:211)
-	... 12 more
-Contains: Cannot resolve host
-
-This is most often caused by a problem with your internet connection. Please check your internet connection and retry.
-java.net.UnknownHostException: marketplace.eclipse.org
-	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
-	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
-	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
-	at java.net.InetAddress.getAllByName0(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
-	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:102)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.ExecutorClientWrapper.execute(ExecutorClientWrapper.java:61)
-	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.HttpClientTransport.execute(HttpClientTransport.java:198)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.RequestTemplate.executeImpl(RequestTemplate.java:91)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.RequestTemplate.execute(RequestTemplate.java:50)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.HttpClientTransport.stream(HttpClientTransport.java:211)
-	at org.eclipse.epp.internal.mpc.core.util.FallbackTransportFactory$FallbackTransport.stream(FallbackTransportFactory.java:68)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:163)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:128)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:115)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.processSearchRequest(DefaultMarketplaceService.java:426)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:452)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:1)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService$2.doSearch(CachingMarketplaceService.java:281)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.performSearch(CachingMarketplaceService.java:296)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.tagged(CachingMarketplaceService.java:278)
-	at org.eclipse.epp.internal.mpc.ui.AskMarketPlaceForFileSupportStrategy$1.run(AskMarketPlaceForFileSupportStrategy.java:75)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-!SUBENTRY 1 org.eclipse.epp.mpc.core 4 0 2017-03-13 19:09:02.815
-!MESSAGE Cannot resolve host
-
-This is most often caused by a problem with your internet connection. Please check your internet connection and retry.
-!STACK 0
-java.net.UnknownHostException: marketplace.eclipse.org
-	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
-	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
-	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
-	at java.net.InetAddress.getAllByName0(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
-	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:102)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.ExecutorClientWrapper.execute(ExecutorClientWrapper.java:61)
-	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.HttpClientTransport.execute(HttpClientTransport.java:198)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.RequestTemplate.executeImpl(RequestTemplate.java:91)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.RequestTemplate.execute(RequestTemplate.java:50)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.HttpClientTransport.stream(HttpClientTransport.java:211)
-	at org.eclipse.epp.internal.mpc.core.util.FallbackTransportFactory$FallbackTransport.stream(FallbackTransportFactory.java:68)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:163)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:128)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:115)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.processSearchRequest(DefaultMarketplaceService.java:426)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:452)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:1)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService$2.doSearch(CachingMarketplaceService.java:281)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.performSearch(CachingMarketplaceService.java:296)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.tagged(CachingMarketplaceService.java:278)
-	at org.eclipse.epp.internal.mpc.ui.AskMarketPlaceForFileSupportStrategy$1.run(AskMarketPlaceForFileSupportStrategy.java:75)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-!SUBENTRY 2 org.eclipse.epp.mpc.core 4 0 2017-03-13 19:09:02.815
-!MESSAGE Cannot resolve host
-
-This is most often caused by a problem with your internet connection. Please check your internet connection and retry.
-!STACK 0
-java.net.UnknownHostException: marketplace.eclipse.org
-	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
-	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
-	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
-	at java.net.InetAddress.getAllByName0(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
-	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:102)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.ExecutorClientWrapper.execute(ExecutorClientWrapper.java:61)
-	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.HttpClientTransport.execute(HttpClientTransport.java:198)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.RequestTemplate.executeImpl(RequestTemplate.java:91)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.RequestTemplate.execute(RequestTemplate.java:50)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.HttpClientTransport.stream(HttpClientTransport.java:211)
-	at org.eclipse.epp.internal.mpc.core.util.FallbackTransportFactory$FallbackTransport.stream(FallbackTransportFactory.java:68)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:163)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:128)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:115)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.processSearchRequest(DefaultMarketplaceService.java:426)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:452)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:1)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService$2.doSearch(CachingMarketplaceService.java:281)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.performSearch(CachingMarketplaceService.java:296)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.tagged(CachingMarketplaceService.java:278)
-	at org.eclipse.epp.internal.mpc.ui.AskMarketPlaceForFileSupportStrategy$1.run(AskMarketPlaceForFileSupportStrategy.java:75)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-!SUBENTRY 1 org.eclipse.epp.mpc.core 4 0 2017-03-13 19:09:02.816
-!MESSAGE Cannot resolve host
-
-This is most often caused by a problem with your internet connection. Please check your internet connection and retry.
-!STACK 0
-java.net.UnknownHostException: marketplace.eclipse.org
-	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
-	at java.net.InetAddress$2.lookupAllHostAddr(Unknown Source)
-	at java.net.InetAddress.getAddressesFromNameService(Unknown Source)
-	at java.net.InetAddress.getAllByName0(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
-	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:102)
-	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
-	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
-	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
-	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
-	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
-	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
-	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.ExecutorClientWrapper.execute(ExecutorClientWrapper.java:61)
-	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.HttpClientTransport.execute(HttpClientTransport.java:198)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.RequestTemplate.executeImpl(RequestTemplate.java:91)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.RequestTemplate.execute(RequestTemplate.java:50)
-	at org.eclipse.epp.internal.mpc.core.transport.httpclient.HttpClientTransport.stream(HttpClientTransport.java:211)
-	at org.eclipse.epp.internal.mpc.core.util.FallbackTransportFactory$FallbackTransport.stream(FallbackTransportFactory.java:68)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:163)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:128)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:115)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.processSearchRequest(DefaultMarketplaceService.java:426)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:452)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:1)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService$2.doSearch(CachingMarketplaceService.java:281)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.performSearch(CachingMarketplaceService.java:296)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.tagged(CachingMarketplaceService.java:278)
-	at org.eclipse.epp.internal.mpc.ui.AskMarketPlaceForFileSupportStrategy$1.run(AskMarketPlaceForFileSupportStrategy.java:75)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2017-03-13 19:09:03.044
-!MESSAGE Connection to http://marketplace.eclipse.org/category/free-tagging/fileExtension_MainProperties/api/p?client=org.eclipse.epp.mpc.core&client.version=1.5.3.v20161116-1851&os=win32&ws=win32&nl=fr_FR&java.version=1.8.0_121&product=org.eclipse.epp.package.java.product&product.version=4.6.2.M20161124-1400&runtime.version=3.12.0.v20160606-1342&platform.version=4.6.2.v20161124-1400 failed on marketplace.eclipse.org. Retry attempt 0 started
-!STACK 0
-java.net.UnknownHostException: marketplace.eclipse.org
-	at java.net.InetAddress.getAllByName0(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
-	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
-	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
-	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
-	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-
-!ENTRY org.eclipse.epp.mpc.ui 4 0 2017-03-13 19:09:03.259
-!MESSAGE Cannot complete request to http://marketplace.eclipse.org/category/free-tagging/fileExtension_MainProperties/api/p?client=org.eclipse.epp.mpc.core&client.version=1.5.3.v20161116-1851&os=win32&ws=win32&nl=fr_FR&java.version=1.8.0_121&product=org.eclipse.epp.package.java.product&product.version=4.6.2.M20161124-1400&runtime.version=3.12.0.v20160606-1342&platform.version=4.6.2.v20161124-1400: Unknown Host: http://marketplace.eclipse.org/category/free-tagging/fileExtension_MainProperties/api/p?client=org.eclipse.epp.mpc.core&client.version=1.5.3.v20161116-1851&os=win32&ws=win32&nl=fr_FR&java.version=1.8.0_121&product=org.eclipse.epp.package.java.product&product.version=4.6.2.M20161124-1400&runtime.version=3.12.0.v20160606-1342&platform.version=4.6.2.v20161124-1400
-!STACK 1
-org.eclipse.core.runtime.CoreException: Cannot complete request to http://marketplace.eclipse.org/category/free-tagging/fileExtension_MainProperties/api/p?client=org.eclipse.epp.mpc.core&client.version=1.5.3.v20161116-1851&os=win32&ws=win32&nl=fr_FR&java.version=1.8.0_121&product=org.eclipse.epp.package.java.product&product.version=4.6.2.M20161124-1400&runtime.version=3.12.0.v20160606-1342&platform.version=4.6.2.v20161124-1400: Unknown Host: http://marketplace.eclipse.org/category/free-tagging/fileExtension_MainProperties/api/p?client=org.eclipse.epp.mpc.core&client.version=1.5.3.v20161116-1851&os=win32&ws=win32&nl=fr_FR&java.version=1.8.0_121&product=org.eclipse.epp.package.java.product&product.version=4.6.2.M20161124-1400&runtime.version=3.12.0.v20160606-1342&platform.version=4.6.2.v20161124-1400
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:198)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:128)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:115)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.processSearchRequest(DefaultMarketplaceService.java:426)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:452)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:1)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService$2.doSearch(CachingMarketplaceService.java:281)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.performSearch(CachingMarketplaceService.java:296)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.tagged(CachingMarketplaceService.java:278)
-	at org.eclipse.epp.internal.mpc.ui.AskMarketPlaceForFileSupportStrategy$1.run(AskMarketPlaceForFileSupportStrategy.java:75)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: org.eclipse.core.runtime.CoreException: Unknown Host: http://marketplace.eclipse.org/category/free-tagging/fileExtension_MainProperties/api/p?client=org.eclipse.epp.mpc.core&client.version=1.5.3.v20161116-1851&os=win32&ws=win32&nl=fr_FR&java.version=1.8.0_121&product=org.eclipse.epp.package.java.product&product.version=4.6.2.M20161124-1400&runtime.version=3.12.0.v20160606-1342&platform.version=4.6.2.v20161124-1400
-	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.stream(RepositoryTransport.java:181)
-	at org.eclipse.oomph.p2.internal.core.CachingTransport.stream(CachingTransport.java:261)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.eclipse.epp.internal.mpc.core.util.AbstractP2TransportFactory.invokeStream(AbstractP2TransportFactory.java:35)
-	at org.eclipse.epp.internal.mpc.core.util.TransportFactory$1.stream(TransportFactory.java:285)
-	at org.eclipse.epp.internal.mpc.core.util.FallbackTransportFactory$FallbackTransport.primaryFailed(FallbackTransportFactory.java:129)
-	at org.eclipse.epp.internal.mpc.core.util.FallbackTransportFactory$FallbackTransport.stream(FallbackTransportFactory.java:85)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:163)
-	... 10 more
-Caused by: java.net.UnknownHostException: marketplace.eclipse.org
-	at java.net.InetAddress.getAllByName0(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
-	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
-	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
-	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
-	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
-	... 1 more
-!SUBENTRY 1 org.eclipse.epp.mpc.core 4 0 2017-03-13 19:09:03.260
-!MESSAGE Cannot complete request to http://marketplace.eclipse.org/category/free-tagging/fileExtension_MainProperties/api/p?client=org.eclipse.epp.mpc.core&client.version=1.5.3.v20161116-1851&os=win32&ws=win32&nl=fr_FR&java.version=1.8.0_121&product=org.eclipse.epp.package.java.product&product.version=4.6.2.M20161124-1400&runtime.version=3.12.0.v20160606-1342&platform.version=4.6.2.v20161124-1400: Unknown Host: http://marketplace.eclipse.org/category/free-tagging/fileExtension_MainProperties/api/p?client=org.eclipse.epp.mpc.core&client.version=1.5.3.v20161116-1851&os=win32&ws=win32&nl=fr_FR&java.version=1.8.0_121&product=org.eclipse.epp.package.java.product&product.version=4.6.2.M20161124-1400&runtime.version=3.12.0.v20160606-1342&platform.version=4.6.2.v20161124-1400
-!STACK 1
-org.eclipse.core.runtime.CoreException: Unknown Host: http://marketplace.eclipse.org/category/free-tagging/fileExtension_MainProperties/api/p?client=org.eclipse.epp.mpc.core&client.version=1.5.3.v20161116-1851&os=win32&ws=win32&nl=fr_FR&java.version=1.8.0_121&product=org.eclipse.epp.package.java.product&product.version=4.6.2.M20161124-1400&runtime.version=3.12.0.v20160606-1342&platform.version=4.6.2.v20161124-1400
-	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.stream(RepositoryTransport.java:181)
-	at org.eclipse.oomph.p2.internal.core.CachingTransport.stream(CachingTransport.java:261)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.eclipse.epp.internal.mpc.core.util.AbstractP2TransportFactory.invokeStream(AbstractP2TransportFactory.java:35)
-	at org.eclipse.epp.internal.mpc.core.util.TransportFactory$1.stream(TransportFactory.java:285)
-	at org.eclipse.epp.internal.mpc.core.util.FallbackTransportFactory$FallbackTransport.primaryFailed(FallbackTransportFactory.java:129)
-	at org.eclipse.epp.internal.mpc.core.util.FallbackTransportFactory$FallbackTransport.stream(FallbackTransportFactory.java:85)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:163)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:128)
-	at org.eclipse.epp.internal.mpc.core.service.RemoteMarketplaceService.processRequest(RemoteMarketplaceService.java:115)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.processSearchRequest(DefaultMarketplaceService.java:426)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:452)
-	at org.eclipse.epp.internal.mpc.core.service.DefaultMarketplaceService.tagged(DefaultMarketplaceService.java:1)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService$2.doSearch(CachingMarketplaceService.java:281)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.performSearch(CachingMarketplaceService.java:296)
-	at org.eclipse.epp.internal.mpc.core.service.CachingMarketplaceService.tagged(CachingMarketplaceService.java:278)
-	at org.eclipse.epp.internal.mpc.ui.AskMarketPlaceForFileSupportStrategy$1.run(AskMarketPlaceForFileSupportStrategy.java:75)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-Caused by: java.net.UnknownHostException: marketplace.eclipse.org
-	at java.net.InetAddress.getAllByName0(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
-	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
-	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
-	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
-	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
-	... 1 more
-!SUBENTRY 2 org.eclipse.equinox.p2.transport.ecf 4 1006 2017-03-13 19:09:03.261
-!MESSAGE Unknown Host: http://marketplace.eclipse.org/category/free-tagging/fileExtension_MainProperties/api/p?client=org.eclipse.epp.mpc.core&client.version=1.5.3.v20161116-1851&os=win32&ws=win32&nl=fr_FR&java.version=1.8.0_121&product=org.eclipse.epp.package.java.product&product.version=4.6.2.M20161124-1400&runtime.version=3.12.0.v20160606-1342&platform.version=4.6.2.v20161124-1400
-!STACK 0
-java.net.UnknownHostException: marketplace.eclipse.org
-	at java.net.InetAddress.getAllByName0(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at java.net.InetAddress.getAllByName(Unknown Source)
-	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.resolveHostname(DefaultClientConnectionOperator.java:259)
-	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:159)
-	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
-	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:131)
-	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:611)
-	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:446)
-	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:863)
-	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
-	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1084)
-	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:1075)
-	at org.eclipse.ecf.provider.filetransfer.httpclient4.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:1071)
-	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
-!SESSION 2017-03-14 10:51:12.632 -----------------------------------------------
-eclipse.buildId=4.6.2.M20161124-1400
-java.version=1.8.0_121
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-14 10:52:11.956
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-14 16:27:00.787 -----------------------------------------------
-eclipse.buildId=4.6.2.M20161124-1400
-java.version=1.8.0_121
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-14 16:27:28.499
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-20 15:05:20.159 -----------------------------------------------
-eclipse.buildId=4.6.2.M20161124-1400
-java.version=1.8.0_121
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-20 15:05:58.998
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-20 16:45:11.781 -----------------------------------------------
-eclipse.buildId=4.6.2.M20161124-1400
-java.version=1.8.0_121
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-20 16:45:31.734
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-20 19:55:51.426 -----------------------------------------------
-eclipse.buildId=4.6.2.M20161124-1400
-java.version=1.8.0_121
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-20 19:56:13.780
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-21 15:04:01.212 -----------------------------------------------
-eclipse.buildId=4.6.2.M20161124-1400
-java.version=1.8.0_121
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-21 15:04:50.631
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-21 16:26:13.775 -----------------------------------------------
-eclipse.buildId=4.6.2.M20161124-1400
-java.version=1.8.0_121
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-21 16:26:47.913
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-27 17:07:21.026 -----------------------------------------------
+Java Model Exception: Java Model Status [EnvironnementAnalyseCorresp [in [Working copy] AgentEnv.java [in Sudoku [in src [in TD4]]]] does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:556)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:590)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:316)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:302)
+	at org.eclipse.jdt.internal.core.SourceRefElement.getSourceRange(SourceRefElement.java:218)
+	at org.eclipse.jdt.internal.core.Member.getJavadocRange(Member.java:291)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContentFromSource(JavadocContentAccess2.java:658)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:534)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:717)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:635)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:627)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:164)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:86)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:165)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2017-04-04 17:13:15.753
+!MESSAGE EnvironnementAnalyseCorresp [in [Working copy] AgentEnv.java [in Sudoku [in src [in TD4]]]] does not exist
+!SESSION 2017-04-05 18:16:10.079 -----------------------------------------------
 eclipse.buildId=4.6.3.M20170301-0400
 java.version=1.8.0_121
 java.vendor=Oracle Corporation
@@ -488,75 +70,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
 Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
-!ENTRY org.eclipse.jdt.core 4 0 2017-03-27 17:08:19.214
-!MESSAGE Invalid ZIP archive: C:\Users\Alexandre\Downloads\jade4.3.3.jar
-
-!ENTRY org.eclipse.jdt.core 4 0 2017-03-27 17:08:19.266
-!MESSAGE Invalid ZIP archive: C:\Users\Alexandre\Downloads\lib-jackson-2.8.1\jackson-annotations-2.8.0.jar
-
-!ENTRY org.eclipse.jdt.core 4 0 2017-03-27 17:08:19.269
-!MESSAGE Invalid ZIP archive: C:\Users\Alexandre\Downloads\lib-jackson-2.8.1\jackson-core-2.8.1.jar
-
-!ENTRY org.eclipse.jdt.core 4 0 2017-03-27 17:08:19.271
-!MESSAGE Invalid ZIP archive: C:\Users\Alexandre\Downloads\lib-jackson-2.8.1\jackson-databind-2.8.1.jar
-
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-27 17:08:21.032
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-27 22:26:47.728 -----------------------------------------------
-eclipse.buildId=4.6.3.M20170301-0400
-java.version=1.8.0_121
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-27 22:27:27.532
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-28 12:33:50.686 -----------------------------------------------
-eclipse.buildId=4.6.3.M20170301-0400
-java.version=1.8.0_121
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-28 12:34:16.987
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-28 16:33:53.516 -----------------------------------------------
-eclipse.buildId=4.6.3.M20170301-0400
-java.version=1.8.0_121
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-28 16:34:16.331
-!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
-user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
-not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
-EGit might behave differently since they see different configuration options.
-This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
-!SESSION 2017-03-29 15:32:00.955 -----------------------------------------------
-eclipse.buildId=4.6.3.M20170301-0400
-java.version=1.8.0_121
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
-Framework arguments:  -product org.eclipse.epp.package.java.product
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
-
-!ENTRY org.eclipse.egit.ui 2 0 2017-03-29 15:32:36.495
+!ENTRY org.eclipse.egit.ui 2 0 2017-04-05 18:16:34.021
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\Alexandre'. If this is
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
