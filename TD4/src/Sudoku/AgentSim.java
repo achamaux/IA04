@@ -66,7 +66,7 @@ public class AgentSim extends Agent {
 			// Envoi des messages du Ticker
 			MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.INFORM);
 			ACLMessage message = receive(mt);
-			if ( message != null && message.getContent().equals("Terminé"))
+			if ( message != null && message.getContent().equals("Fin"))
 				this.getAgent().doDelete();
 			else if (EnvironnementAid != null ){
 				for (int i = 0 ; i < subscribed.size() ; i++) {

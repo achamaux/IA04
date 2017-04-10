@@ -17,12 +17,13 @@ public class AgentEnv extends Agent {
 	public void setup() {
 		sudoku = new Sudoku();
 		this.addBehaviour(new Listen());
+		System.out.println();
 		for (int i=0; i<27; i++) {
 			List<Cellule> ce = sudoku.getCellules(i);
-			System.out.print("group : " + i + "---");
+			/* System.out.print("bloc : " + i + "---");
 			for (Cellule c : ce)
-				System.out.print(c.getValue() + " ");
-			System.out.println();
+				System.out.print(c.getValue() + " "); 
+			System.out.println(); */
 			try {
 				this.getContainerController().createNewAgent("analyse"+String.valueOf(i), "Sudoku.AgentAnalyse", null);
 				this.getContainerController().getAgent("analyse"+String.valueOf(i)).start();
@@ -69,9 +70,9 @@ public class AgentEnv extends Agent {
 		private String UniqueID;
 		private int state;
 		
-		getAnalyse(int bloc, AID analyste, String UniqueID) {
+		getAnalyse(int bloc, AID analyse, String UniqueID) {
 			this.bloc = bloc;
-			this.agentAna = analyste;
+			this.agentAna = analyse;
 			this.UniqueID = UniqueID;
 			state = 0;
 		}
