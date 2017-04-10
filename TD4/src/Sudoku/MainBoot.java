@@ -4,26 +4,24 @@ import jade.core.Profile;
 import jade.core.ProfileImpl;
 import jade.core.Runtime;
 import jade.wrapper.AgentContainer;
-import jade.wrapper.AgentController;
+
 
 public class MainBoot {
 
 	public static void main(String[] args) {
-		String MAIN_PROPERTIES_FILE = "MainProperties";
+		String PROPERTIES_FILE = "MainProperties";
+		
 		Runtime rt = Runtime.instance();
 		Profile p = null;
-		try{
-			p = new ProfileImpl(MAIN_PROPERTIES_FILE);
-			AgentContainer mc = rt.createMainContainer(p);
-			AgentController ac = mc.createNewAgent("Sim","Sudoku.AgentSim", null);
-			AgentController ac2 = mc.createNewAgent("Env","Sudoku.AgentEnv", null);
-			ac.start(); ac2.start();
+		
+		try {
+			p = new ProfileImpl(PROPERTIES_FILE);
 			
-			for (int i=0; i<27; ++i){
-				ac=mc.createNewAgent("AgentAnalyse"+i, "Sudoku.AgentAnalyse", null);
-				ac.start();
-			}
+			rt.createMainContainer(p);
 			
+			AgentContainer ac = rt.createAgentContainer(p);
+			ac.createNewAgent("Environnement",  "Sudoku.AgentEnv",  null).start();
+			ac.createNewAgent("Simulation",  "Sudoku.AgentSim",  null).start();
 		}
 		catch(Exception ex) {
 			ex.printStackTrace();

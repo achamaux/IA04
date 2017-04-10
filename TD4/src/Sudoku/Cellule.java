@@ -1,52 +1,59 @@
 package Sudoku;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Cellule {
+	private List<Integer> possibles;
+	private int value;
+	
+	public Cellule() {
+		value = 0;
+		possibles = new ArrayList<Integer>();
+		for (int i=1; i < 10 ; i++)
+			possibles.add(i);
+	}
+	public Cellule(int val) {
+		possibles = new ArrayList<Integer>();
+		if (val <= 0) {
+			value = 0;
+			for (int i=1; i<10; i++)
+				possibles.add(i);
+		} else {
+			value = val;
+		}
+	}
+	public Cellule(List<Integer> possibleValues) {
+		value = 0;
+		possibles = new ArrayList<Integer>(possibleValues);
+	}
+	
+	public int getValue() {return value;}
+	public void setValue(int val) {value = val;}
+	public List<Integer> getPossibles() {return new ArrayList<Integer>(possibles);}
+	public void setPossibles(List<Integer> poss) {possibles = new ArrayList<Integer>(poss);}
+	
+	public void removePossible(int val) {
+		possibles.remove((Integer)val);
+	}
+	
+	
+	public void defineValue(int val) {
+		value = val;
+		possibles.clear();
+	}
+	
+	// Redéfinit la liste des possibles avec la nouvelle liste en argument
+	public void redefinePossibles(List<Integer> val) {
+		possibles.retainAll(val);
+	}
+	
+	public void print() {
+		System.out.print("val:" + value + "    - ");
+		for (int i : possibles) {
+			System.out.print(" - " + i);
+		}
+		System.out.println();
+	}
 
-	protected int Valeur;
-	protected ArrayList<Integer> ListeValeursPossibles=new ArrayList<Integer>();
-	protected int ligne; protected int colonne;
-	
-	public Cellule(int v, int l, int c){
-		Valeur=v;
-		this.ligne = l;
-		this.colonne = c;
-		
-		//initialisation des valeurs possibles	
-		if (v==0)
-		for (int i=1; i<10; ++i){
-			ListeValeursPossibles.add(i);
-		}
-	}
-	
-	public synchronized void videListePossibles(ArrayList<Integer> v){
-		ListeValeursPossibles.removeAll(v);
-	}
-	
-	public synchronized boolean ValeurPossible(int v){
-		return ListeValeursPossibles.contains(v);
-	}
-	
-	public synchronized int ValeursBinairePossibles(){
-		int nb = 0;
-		for (int i : ListeValeursPossibles){
-			nb += (1 << i);
-		}
-		return nb;
-	}
-	
-	public int NbValeursPossible(){
-		return ListeValeursPossibles.size();
-	}
-	
-	public void setValeur(int v){
-		Valeur = v;
-		ListeValeursPossibles.clear();
-	}
-	
-	public int getValeur() {
-		return Valeur;
-	}
-	
 }

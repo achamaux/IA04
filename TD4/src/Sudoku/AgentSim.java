@@ -1,106 +1,84 @@
 package Sudoku;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
-import jade.core.behaviours.OneShotBehaviour;
-import jade.core.behaviours.SequentialBehaviour;
 import jade.core.behaviours.TickerBehaviour;
-import jade.domain.DFService;
-import jade.domain.FIPAException;
-import jade.domain.FIPAAgentManagement.DFAgentDescription;
-import jade.domain.FIPAAgentManagement.ServiceDescription;
 import jade.lang.acl.ACLMessage;
-
-import java.io.IOException;
-import java.util.HashMap;
+import jade.lang.acl.MessageTemplate;
 
 public class AgentSim extends Agent {
+	private static final long serialVersionUID = 1L;
+	private List<AID> subscribed;
 	
-	private static final long serialVersionUID = 997075021822159306L;
-	//public AID[] AgentsAnalyse=new AID[27]; 
-	HashMap<Integer, AID> map = new HashMap<Integer, AID>();
-	
-	public long period = 1000;
-
-	protected void setup() 
-	{ 
-		System.out.println(getLocalName()+ "--> Installed");  
-		DFAgentDescription dfd = new DFAgentDescription();
-		dfd.setName(getAID());
-		ServiceDescription sd = new ServiceDescription();
-		sd.setType("Simulation");
-		sd.setName("Simulation");
-		dfd.addServices(sd);
-		try {
-			DFService.register(this, dfd);
-		}
-		catch (FIPAException e) {
-			e.printStackTrace();
-		}
-		SequentialBehaviour ResolutionBehaviour = new SequentialBehaviour();
-	
-		//Attente de souscription
-		ResolutionBehaviour.addSubBehaviour(new Behaviour(){
-
-			private static final long serialVersionUID = -8978420565209344880L;
-			protected int i = 0;
-			@Override
-			public void action() {
-				ACLMessage message = myAgent.receive(); //reception des souscriptions
-				if (message != null) {
-					ACLMessage reponse = new ACLMessage(ACLMessage.INFORM_REF);
-					message.addReplyTo(message.getSender());
-					message.addReceiver(new AID("AgentEnv", AID.ISLOCALNAME));
-					map.put(i, message.getSender());
-					i++;
-					send(reponse);
-				}
-			}
-			
-			public boolean done() {
-				if (i>=27) return true;
-				else return false;
-			}
-		});
-		
-		//Ticker Behaviour : Envoi de message aux agents analyses toutes les period ms
-		ResolutionBehaviour.addSubBehaviour(new TickerBehaviour(this, period){
-		
-			private static final long serialVersionUID = -2665058805363369990L;
-			
-			protected void onTick() {
-				ACLMessage message = receive();
-				if (message != null){
-					if (message.getPerformative() == ACLMessage.CONFIRM)
-						stop();
-				} else {
-					ACLMessage requete = new ACLMessage(ACLMessage.REQUEST);
-					requete.addReceiver(new AID("AgentEnv", AID.ISLOCALNAME));
-					map.forEach((key,value)->{
-						try {
-							requete.setContentObject(value);
-							send(requete);
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-					});
-				
-				}
-			}
-		    });
-		
-		//Ticker Behaviour : Envoi de message aux agents analyses toutes les period ms
-		ResolutionBehaviour.addSubBehaviour(new OneShotBehaviour(){
-				
-			private static final long serialVersionUID = -2665058805363369990L;
-
-			@Override
-			public void action() {
-				// TODO Auto-generated method stub
-						
-					}
-			
-	    });
+	public void setup() {
+		//System.out.println(getLocalName() + "--> installed");
+		subscribed = new ArrayList<AID>();
+		addBehaviour(new SubscribingBehaviour());
 	}
-}	
+	
+	public class SubscribingBehaviour extends Behaviour {
+		private static final long serialVersionUID = 11L;
+		private int state;
+		
+		public SubscribingBehaviour() {
+			state = 0;
+		}
+		
+		public void action() {
+			if (state == 0) {
+				ACLMessage message = null;
+				if (subscribed.size() < 27) {
+					//  Réception des demandes de souscription  
+					MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.SUBSCRIBE);
+					while ((message = receive(mt)) != null) {
+						subscribed.add(message.getSender());
+					}
+				}
+				if (subscribed.size() >= 27) {
+					this.getAgent().addBehaviour(new Ticker(this.getAgent(), 3000));
+					state = 1;
+				}
+			}
+		}
+
+		public boolean done() {
+			return (state == 1);
+		}
+		
+		
+	}
+	
+	public class Ticker extends TickerBehaviour {
+		private static final long serialVersionUID = 12L;
+		private AID EnvironnementAid;
+		
+		public Ticker(Agent a, long period) {
+			super(a, period);
+			EnvironnementAid = new AID("Environnement", AID.ISLOCALNAME);
+		}
+		
+		protected void onTick() {
+			
+			// Envoi des messages du Ticker
+			MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.INFORM);
+			ACLMessage message = receive(mt);
+			if ( message != null && message.getContent().equals("Terminé"))
+				this.getAgent().doDelete();
+			else if (EnvironnementAid != null ){
+				for (int i = 0 ; i < subscribed.size() ; i++) {
+					message = new ACLMessage(ACLMessage.PROPAGATE);
+					message.setContent(String.valueOf(i));
+					message.addReceiver(EnvironnementAid);
+					message.addReplyTo(subscribed.get(i));
+					send(message);
+				}
+			} else
+				EnvironnementAid = new AID("Environnement", AID.ISLOCALNAME);
+		}
+	}
+}
+
