@@ -1,0 +1,38 @@
+# baseURI: http://www.owl-ontologies.com/ex
+# imports: file:/C:/Users/.../documents/foaf.owl
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://www.owl-ontologies.com/ex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ex:utc rdf:type foaf:Organization .
+ex:utc rdfs:label "UTC"@fr .
+ex:utc foaf:isPrimaryTopicOf ex:b1 .
+ex:b1 rdf:type foaf:Document .
+ex:b1 foaf:primaryTopic ex:utc .
+
+ex:steve rdf:type foaf:Person .
+ex:steve foaf:name "steveo"^^xsd:string .
+ex:steve foaf:interest ex:b1 .
+
+ex:alex rdf:type foaf:Person .
+ex:alex foaf:name "alex"^^xsd:string .
+ex:alex foaf:knows ex:steve .
+ex:alex foaf:topic_interest ex:b1 .
+
+ex:max rdf:type foaf:Person .
+ex:max foaf:name "max"^^xsd:string .
+ex:max foaf:interest ex:b1 .
+
+ex:pierre rdf:type foaf:Person .
+ex:pierre foaf:name "pierre"^^xsd:string .
+ex:pierre foaf:knows ex:paul .
+ex:pierre foaf:topic_interest ex:b1 .
+
+ex:paul rdf:type foaf:Person .
+ex:paul foaf:name "paul"^^xsd:string .
+ex:paul foaf:knows ex:pierre .
+ex:paul foaf:topic_interest ex:b1 .
+

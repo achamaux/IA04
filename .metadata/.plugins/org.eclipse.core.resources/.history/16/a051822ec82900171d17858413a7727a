@@ -1,0 +1,4 @@
+SELECT DISTINCT ?x
+WHERE {
+        ?steve foaf:interest ?x.
+}

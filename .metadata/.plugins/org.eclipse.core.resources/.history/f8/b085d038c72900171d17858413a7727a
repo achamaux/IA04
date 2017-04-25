@@ -1,0 +1,8 @@
+SELECT DISTINCT ?nom ?image ?description
+WHERE {
+        ?personne rdf:type foaf:Person.
+        ?personne foaf:name ?nom.
+        ?image rdf:type foaf:Image.
+        ?personne foaf:img ?image.
+        ?image dc:description ?description
+}

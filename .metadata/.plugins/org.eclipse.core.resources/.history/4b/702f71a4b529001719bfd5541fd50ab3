@@ -1,0 +1,53 @@
+package TD5;
+
+import java.beans.Statement;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import javax.annotation.Resource;
+
+import org.apache.jena.query.Query;
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QueryFactory;
+import org.apache.jena.query.ResultSet;
+import org.apache.jena.query.ResultSetFormatter;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.RDFNode;
+import org.apache.jena.rdf.model.Selector;
+import org.apache.jena.rdf.model.SimpleSelector;
+import org.apache.jena.rdf.model.StmtIterator;
+import org.apache.jena.util.FileManager;
+
+import jade.core.Agent;
+import jade.domain.FIPAAgentManagement.Property;
+
+public class AgentRech extends Agent {
+	
+	private static final long serialVersionUID = -9074818395516468244L;
+
+	public void setup() {
+		test();
+	}
+	
+	public static void test() {
+		String query = "td6query/q11.sparql"; // fichier contenant la requête
+		Model model = ModelFactory.createDefaultModel();
+		try {
+		model.read(new FileInputStream("ex"),null, "TURTLE");
+		runSelectQuery(query, model);
+		} catch (FileNotFoundException e) {
+		e.printStackTrace();
+		}
+	}
+	
+	public static void runSelectQuery(String qfilename, Model model) {
+		Query query = QueryFactory.read(qfilename);
+		QueryExecution queryExecution = QueryExecutionFactory.create(query, model);
+		ResultSet r = queryExecution.execSelect();
+		ResultSetFormatter.out(System.out,r);
+		queryExecution.close();
+		}
+}
+

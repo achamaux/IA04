@@ -7,4 +7,19 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.io.StringWriter"/>
 <fullyQualifiedTypeName name="jade.core.behaviours.OneShotBehaviour"/>
+<fullyQualifiedTypeName name="jade.core.behaviours.SequentialBehaviour"/>
+<fullyQualifiedTypeName name="org.apache.jena.rdf.model.ModelFactory"/>
+<fullyQualifiedTypeName name="org.apache.jena.rdf.model.Model"/>
+<fullyQualifiedTypeName name="org.apache.jena.util.FileManager"/>
+<fullyQualifiedTypeName name="javax.annotation.Resource"/>
+<fullyQualifiedTypeName name="FIPA.Property"/>
+<fullyQualifiedTypeName name="org.apache.jena.rdf.model.Property"/>
+<fullyQualifiedTypeName name="jade.domain.FIPAAgentManagement.Property"/>
+<fullyQualifiedTypeName name="java.nio.channels.Selector"/>
+<fullyQualifiedTypeName name="org.apache.xerces.impl.xs.identity.Selector"/>
+<fullyQualifiedTypeName name="org.apache.jena.rdf.model.SimpleSelector"/>
+<fullyQualifiedTypeName name="org.apache.jena.rdf.model.StmtIterator"/>
+<fullyQualifiedTypeName name="java.beans.Statement"/>
+<fullyQualifiedTypeName name="org.apache.jena.rdf.model.RDFNode"/>
+<fullyQualifiedTypeName name="org.apache.jena.rdf.model.Selector"/>
 </qualifiedTypeNameHistroy>
