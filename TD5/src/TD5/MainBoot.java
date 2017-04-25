@@ -20,6 +20,7 @@ public class MainBoot {
 			
 			AgentContainer ac = rt.createAgentContainer(p);
 			ac.createNewAgent("Recherche",  "TD5.AgentRech",  null).start();
+			ac.createNewAgent("Propagation",  "TD5.PropagateSparql",  null).start();
 		}
 		catch(Exception ex) {
 			ex.printStackTrace();

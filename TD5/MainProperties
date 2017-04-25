@@ -1,4 +1,4 @@
 main=true
-gui=false
+gui=true
 platform-id=td6ia04
 #local-port=1099

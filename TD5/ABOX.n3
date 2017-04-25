@@ -6,6 +6,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix ex: <http://www.owl-ontologies.com/ex#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix geo: <http://linkedgeodata.org/triplify/> .
 
 ex:utc rdf:type foaf:Organization .
 ex:utc rdfs:label "UTC"@fr .
@@ -16,11 +17,14 @@ ex:b1 foaf:primaryTopic ex:utc .
 ex:steve rdf:type foaf:Person .
 ex:steve foaf:name "steveo"^^xsd:string .
 ex:steve foaf:interest ex:b1 .
+ex:steve foaf:topic_interest geo:node424313277 . 
+
 
 ex:alex rdf:type foaf:Person .
 ex:alex foaf:name "alex"^^xsd:string .
 ex:alex foaf:knows ex:steve .
 ex:alex foaf:topic_interest ex:b1 .
+ex:alex foaf:topic_interest geo:node424313451 .
 
 ex:max rdf:type foaf:Person .
 ex:max foaf:name "max"^^xsd:string .

@@ -3,9 +3,9 @@ INDEX VERSION 1.130+C:\Users\Alexandre\Documents\Cours\IA04\workspace\.metadata\
 1547093750.index
 1383065640.index
 1127357803.index
-2709225165.index
-2470519452.index
 628019425.index
+2470519452.index
+2709225165.index
 648612256.index
 2521925321.index
 194259052.index
@@ -20,8 +20,8 @@ INDEX VERSION 1.130+C:\Users\Alexandre\Documents\Cours\IA04\workspace\.metadata\
 3434888109.index
 559129880.index
 1689259093.index
-3319634115.index
 1712305193.index
+3319634115.index
 2879905073.index
 2540500133.index
 3431722402.index

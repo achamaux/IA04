@@ -11,6 +11,8 @@ import org.apache.jena.query.ResultSetFormatter;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import jade.core.Agent;
+import jade.core.behaviours.CyclicBehaviour;
+import jade.lang.acl.ACLMessage;
 
 public class AgentRech extends Agent {
 	
@@ -18,8 +20,30 @@ public class AgentRech extends Agent {
 
 	public void setup() {
 		System.out.println(getLocalName() + "--> installed");
-		//test();
-		test2();
+		addBehaviour(new CyclicBehaviour() {
+			//Attente d'une requête
+			private static final long serialVersionUID = 1743225391371670328L;
+			
+			@Override
+			public void action() {
+				ACLMessage msg=receive();
+				if(msg!=null){
+					System.out.println(getLocalName() + " reçoit : "+msg.getContent());
+					String query = msg.getContent();
+					Model model = ModelFactory.createDefaultModel();
+					try {
+						model.read(new FileInputStream("ABOX.n3"),null, "TURTLE");	
+						ACLMessage reply = msg.createReply();
+						reply.setContent(runSelectQuery(query,model));
+						send(reply);
+						
+					} catch (FileNotFoundException e) {
+					e.printStackTrace();
+					}
+				}
+				else block();
+			}
+		});
 	}
 	
 	public static void test() {
@@ -40,12 +64,14 @@ public class AgentRech extends Agent {
 		runSelectQueryDistance(query);
 	}
 	
-	public static void runSelectQuery(String qfilename, Model model) {
-		Query query = QueryFactory.read(qfilename);
-		QueryExecution queryExecution = QueryExecutionFactory.create(query, model);
+	public static String runSelectQuery(String qfilename, Model model) {
+		//Query query = QueryFactory.read(qfilename);
+		QueryExecution queryExecution = QueryExecutionFactory.create(qfilename, model);
 		ResultSet r = queryExecution.execSelect();
-		ResultSetFormatter.out(System.out,r);
+		//ResultSetFormatter.out(System.out,r);
+		String temp =  ResultSetFormatter.asText(r);
 		queryExecution.close();
+		return temp;
 	}
 	
 	public static void runSelectQueryDistance(String qfilename) {
@@ -55,7 +81,7 @@ public class AgentRech extends Agent {
 		System.out.println("Query sent");
 		QueryExecution queryExecution = QueryExecutionFactory.sparqlService( "http://linkedgeodata.org/sparql", query);
 		ResultSet r = queryExecution.execSelect();
-		ResultSetFormatter.out(System.out,r);
+		ResultSetFormatter.out(System.out,r);//récupère le string à partir de cette ligne
 		queryExecution.close();
 	}
 }
