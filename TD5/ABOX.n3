@@ -8,35 +8,41 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix geo: <http://linkedgeodata.org/triplify/> .
 
-ex:utc rdf:type foaf:Organization .
-ex:utc rdfs:label "UTC"@fr .
-ex:utc foaf:isPrimaryTopicOf ex:b1 .
-ex:b1 rdf:type foaf:Document .
-ex:b1 foaf:primaryTopic ex:utc .
+td5:utc rdf:type foaf:Organization .
+td5:utc rdfs:label "UTC"@fr .
+td5:utc foaf:isPrimaryTopicOf ex:b1 .
 
-ex:steve rdf:type foaf:Person .
-ex:steve foaf:name "steveo"^^xsd:string .
-ex:steve foaf:interest ex:b1 .
-ex:steve foaf:topic_interest geo:node424313277 . 
+td5:utt rdf:type foaf:Organization .
+td5:utt rdfs:label "UTT"@fr .
+td5:utt foaf:isPrimaryTopicOf ex:b2 .
 
+td5:b1 rdf:type foaf:Document .
+td5:b1 foaf:primaryTopic ex:utc .
+td5:b2 rdf:type foaf:Document .
+td5:b2 foaf:primaryTopic ex:utt .
 
-ex:alex rdf:type foaf:Person .
-ex:alex foaf:name "alex"^^xsd:string .
-ex:alex foaf:knows ex:steve .
-ex:alex foaf:topic_interest ex:b1 .
-ex:alex foaf:topic_interest geo:node424313451 .
+td5:steve rdf:type foaf:Person .
+td5:steve foaf:name "steve"^^xsd:string .
+td5:steve foaf:interest td5:b1 .
+td5:steve foaf:topic_interest geo:node424313277 . 
 
-ex:max rdf:type foaf:Person .
-ex:max foaf:name "max"^^xsd:string .
-ex:max foaf:interest ex:b1 .
+td5:alexandre rdf:type foaf:Person .
+td5:alexandre foaf:name "alexandre"^^xsd:string .
+td5:alexandre foaf:knows ex:steve .
+td5:alexandre foaf:topic_interest ex:b1 .
+td5:alexandre foaf:topic_interest geo:node424313451 .
 
-ex:pierre rdf:type foaf:Person .
-ex:pierre foaf:name "pierre"^^xsd:string .
-ex:pierre foaf:knows ex:paul .
-ex:pierre foaf:topic_interest ex:b1 .
+td5:max rdf:type foaf:Person .
+td5:max foaf:name "max"^^xsd:string .
+td5:max foaf:interest td5:b1 .
 
-ex:paul rdf:type foaf:Person .
-ex:paul foaf:name "paul"^^xsd:string .
-ex:paul foaf:knows ex:pierre .
-ex:paul foaf:topic_interest ex:b1 .
+td5:pierre rdf:type foaf:Person .
+td5:pierre foaf:name "pierre"^^xsd:string .
+td5:pierre foaf:knows td5:paul .
+td5:pierre foaf:topic_interest td5:b2 .
+
+td5:paul rdf:type foaf:Person .
+td5:paul foaf:name "paul"^^xsd:string .
+td5:paul foaf:knows td5:pierre .
+td5:paul foaf:topic_interest td5:b1 .
 

@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.ObjectMapper"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.io.StringWriter"/>
-<fullyQualifiedTypeName name="jade.core.behaviours.OneShotBehaviour"/>
 <fullyQualifiedTypeName name="jade.core.behaviours.SequentialBehaviour"/>
 <fullyQualifiedTypeName name="org.apache.jena.rdf.model.ModelFactory"/>
 <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Model"/>
@@ -22,4 +21,18 @@
 <fullyQualifiedTypeName name="java.beans.Statement"/>
 <fullyQualifiedTypeName name="org.apache.jena.rdf.model.RDFNode"/>
 <fullyQualifiedTypeName name="org.apache.jena.rdf.model.Selector"/>
+<fullyQualifiedTypeName name="jade.core.behaviours.CyclicBehaviour"/>
+<fullyQualifiedTypeName name="jade.lang.acl.ACLMessage"/>
+<fullyQualifiedTypeName name="jade.core.behaviours.OneShotBehaviour"/>
+<fullyQualifiedTypeName name="jade.core.AID"/>
+<fullyQualifiedTypeName name="sim.display.Controller"/>
+<fullyQualifiedTypeName name="td7.model.Constants"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="sim.engine.Stoppable"/>
+<fullyQualifiedTypeName name="sim.app.crowd3d.Agent"/>
+<fullyQualifiedTypeName name="td7.model.Insecte"/>
+<fullyQualifiedTypeName name="sim.util.Bag"/>
+<fullyQualifiedTypeName name="java.awt.Graphics2D"/>
+<fullyQualifiedTypeName name="sim.portrayal.DrawInfo2D"/>
+<fullyQualifiedTypeName name="td7.model.Nourriture"/>
 </qualifiedTypeNameHistroy>
